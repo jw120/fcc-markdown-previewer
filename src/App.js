@@ -1,6 +1,6 @@
 // @flow
 
-// Top-level React component
+// Stateless function component that provides the top-level of our application
 
 import React from 'react';
 import './App.css'
