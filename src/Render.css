@@ -1,4 +1,9 @@
 .Render {
+  width: 600px;
+  text-align: left;
+  border-color: black;
+  border-width: 10px;
+  background-color: silver;
 }
 
 .Render-header {

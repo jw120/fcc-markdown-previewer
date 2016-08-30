@@ -8,7 +8,8 @@ Uses Facebook's new `create-react-app` boilerplate
 * DONE - Add props to Render
 * DONE - Check SFC syntax/terminology (and "component") and type of return value
 * DONE - Add marked renderer to Render
-* Work out Entry and its state
+* DONE - Work out Entry and its state
+* Check modelanswer
 * Make prettier
 
 ## Misc tasks
