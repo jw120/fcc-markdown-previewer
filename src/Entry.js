@@ -1,6 +1,8 @@
-// @flow
-
-// Stateless function component to render the text entry box
+/** @flow
+ *
+ * Stateless function component to render the text entry box
+ *
+ */
 
 import React from 'react';
 import './Entry.css';
