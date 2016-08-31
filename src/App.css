@@ -1,15 +1,86 @@
 .App {
-  text-align: center;
+  padding: 0px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 60px;
-  padding: 10px;
+  background-color: black;
+  height: 24px;
+  text-align: center;
+  padding-top: 5px;
   color: white;
 }
 
+/**
+ * Mini-version of the flexbox-powered grid style layout used in our fcc-portfolio project
+ *
+ * We have two boxes (one with the input text area, one for the rendered output) inside a
+ * container. With a wide page, the boxes sit side-by-side and together fill the width of the page.
+ * For a narrow page they sit one above the other and each one fills the width
+ *
+ */
+
+/* The container that contains the two boxes */
+.App-container {
+  height: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Each of the two boxes */
+.App-box {
+  /* Formatting for the box within the grid */
+  height: 100%;
+  /* margin: 8px; */
+  flex: 1 1 400px; /* we would just use flex:1, but this fails on safari 9 due to this bug https://bugs.webkit.org/show_bug.cgi?id=136041 */
+  min-width: 400px;
+  /* box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2); */
+
+  Formatting within the card
+  display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+}
+
+.App-box-header {
+  height: 24px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.App-box-header-source {
+  background-color: silver;
+}
+
+.App-box-header-render {
+  background-color: gray;
+}
+
+.App-box-contents {
+  height: 471px;
+  background-color: yellow;
+  margin: 0px;
+  padding: 0px;
+}
+
+.App-form {
+  height: 100%;
+}
+
 .App-textarea {
-  width: 600px;
-  height: 400px;
+  background-color: blue;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+}
+
+.App-footer {
+  padding-top: 10em;
+  font-size: 8pt;
+  text-align: center;
 }

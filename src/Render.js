@@ -21,13 +21,15 @@ function Render({ markdown }: { markdown: string}): React.Element<*> {
   let renderedMarkdown = { __html: marked(markdown, markedOptions) };
 
   return (
-    <div className="Render">
-      <div className="Render-header">
-        <h3>Rendered from Markdown</h3>
-      </div>
-       <span dangerouslySetInnerHTML={renderedMarkdown} />
-    </div>
+         <span className="Render" dangerouslySetInnerHTML={renderedMarkdown} />
   );
 }
 
 export default Render;
+/*
+
+<div calassName="Render">
+   <span dangerouslySetInnerHTML={renderedMarkdown} />
+</div>
+
+*/
