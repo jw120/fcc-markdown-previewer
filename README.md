@@ -1,7 +1,5 @@
 # FreeCodeCamp React exercise: Markdown previewer
 
-Uses Facebook's new `create-react-app` boilerplate
+Uses React and ES6 (via babel) with Facebook's new `create-react-app` boilerplate
 
-## TODO
-
-* Update `favicon.ico`
+Hosted at [jw120.github.io](https://jw120.github.io)
