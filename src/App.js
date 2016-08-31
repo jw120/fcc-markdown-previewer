@@ -1,41 +1,29 @@
 /** @flow
  *
- * Container that holds our header, input form and the rendering component
+ * Container that holds our state and includes the source and render components
  *
  */
 
 import React from 'react';
 import './App.css'
 import Render from './Render.js';
+import Source from './Source.js';
 
-const testData: string = `Heading
-=======
+/** We start with some dummmy markdown */
+const initialMarkdown: string = `
+## Heading
 
-Sub-heading
------------
-
-### Another deeper heading
-
-Paragraphs are separated
-by a blank line.
-
-Leave 2 spaces at the end of a line to do a
-line break
-
-Text attributes *italic*, **bold**,
-\`monospace\`, ~~strikethrough~~ .
-
-Shopping list: Q
-
+Text attributes *italic*, **bold**, \`monospace\`, ~~strikethrough~~ .
   * apples
   * oranges
   * pears
+    + red
+    + blue
 
-The rain---not the reign---in
-Spain.
+The 'rain'---not the reign---in "Spain".
 
- *[Herman Fassett](https://freecodecamp.com/hermanfassett)*
- `;
+*[Herman Fassett](https://freecodecamp.com/hermanfassett)*
+`;
 
 class App extends React.Component<*, *, *> {
 
@@ -43,7 +31,7 @@ class App extends React.Component<*, *, *> {
 
   constructor() {
     super();
-    this.state = { markdown: testData };
+    this.state = { markdown: initialMarkdown };
   }
 
   handleTextChange(e: Event) {
@@ -62,58 +50,24 @@ class App extends React.Component<*, *, *> {
           Markdown previewer
         </div>
 
-        <div className="App-container">
+        <Source
+          markdown={this.state.markdown}
+          placeholder="Enter markdown here"
+          changeCallback={(e) => this.handleTextChange(e)}
+        />
 
-          <div className="App-box">
-            <div className="App-box-header App-box-header-source">
-              Markdown input
-            </div>
-            <div className="App-box-contents">
-              <form className="App-form">
-                <textarea
-                  className="App-textarea"
-                  placeholder="Enter markdown here"
-                  onChange={(e) => this.handleTextChange(e)}
-                  value={this.state.markdown}
-                />
-              </form>
-            </div>
-          </div>
-
-          <div className="App-box">
-            <div className="App-box-header App-box-header-render">
-              HTML output
-            </div>
-            <div className="App-box-contents">
-              <Render markdown={this.state.markdown}/>
-            </div>
-          </div>
-
-        </div>
+        <Render
+          markdown={this.state.markdown}
+        />
 
         <div className="App-footer">
-             Page by <a href="https://jw120.github.io">jw120</a>.
-         </div>
+           Page by <a href="https://jw120.github.io">jw120</a>.
+        </div>
 
       </div>
     );
   }
 
 }
-
-/* <div className="App-box-contents">
-//      <Render markdown={this.state.markdown}/>
-//      </div>
-*/
-
-
-/*
-
-Numbered list:
-
-  1. apples
-  2. oranges
-  3. pears
- */
 
 export default App;
